@@ -19,21 +19,15 @@ public class Main {
 
         //Captialize first letter of each remaining term
         for(int i = 1; i<= split_terms.length-1;i++) {
-            if (split_terms[i].length() > 0) { //Does the term have at least 1 character?
                 String firstLetter = split_terms[i].substring(0, 1).toUpperCase(); //Get first letter, captialize it
                 String remainingLetters = split_terms[i].substring(1); //Get remaining letters
 
                 String newTerm = String.join("", firstLetter, remainingLetters);
                 splitTerms[i] = newTerm;
             }
-        }
+    
 
-        String camelCase = "";
-        for (String term: splitTerms){ //Output shold not have nulls or spaces
-            if (term != null && term != "") { camelCase += term; }
-        }
-
-        return camelCase;
+        return String.join("", splitTerms);
     }
     public static String to_Snake_Case(String camelCasing){
 
